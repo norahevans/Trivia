@@ -18,6 +18,9 @@ app.use((req, res, next) => {
 
 app.use(express.static('public'));
 
+// Judge password
+const JUDGE_PASSWORD = process.env.JUDGE_PASSWORD || 'isdatinganevansreallyworthit';
+
 // Player names - customize these for your family!
 const PLAYER_NAMES = [
   'Norah', 'Erin', 'Opa', 'Oma', 'Jeff',
