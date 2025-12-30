@@ -168,13 +168,18 @@ io.on('connection', (socket) => {
     }
   });
 
-  // Player becomes judge
-  socket.on('becomeJudge', () => {
-    if (gameState.players[socket.id]) {
-      delete gameState.players[socket.id];
+  // Player becomes judge (requires password)
+  socket.on('becomeJudge', (password) => {
+    if (password === JUDGE_PASSWORD) {
+      if (gameState.players[socket.id]) {
+        delete gameState.players[socket.id];
+      }
+      gameState.judge = socket.id;
+      socket.emit('judgeAuthResult', { success: true });
+      broadcastState();
+    } else {
+      socket.emit('judgeAuthResult', { success: false, message: 'Wrong password!' });
     }
-    gameState.judge = socket.id;
-    broadcastState();
   });
 
   // Anyone can submit a question
