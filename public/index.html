@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Trivia Night! 🎉</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="shape shape-5"></div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>🎯 Family Trivia Night 🎉</h1>
+    </header>
+
+    <!-- Player Selection Screen -->
+    <section id="playerSelect" class="screen active">
+      <div class="card">
+        <h2>Who are you?</h2>
+        <p class="subtitle">Pick your name to join the game!</p>
+        <div id="playerButtons" class="player-grid"></div>
+        <div class="divider">
+          <span>or</span>
+        </div>
+        <button id="judgeBtn" class="judge-btn">
+          🧑‍⚖️ I'm the Judge!
+        </button>
+      </div>
+    </section>
+
+    <!-- Lobby / Waiting Screen -->
+    <section id="lobby" class="screen">
+      <div class="card">
+        <h2 id="lobbyTitle">Waiting for players...</h2>
+        <div id="playerList" class="player-list"></div>
+        
+        <!-- Question Submission (for players only) -->
+        <div id="questionSubmitLobby" class="question-submit-section hidden">
+          <h3>📝 Submit a Question</h3>
+          <p class="submit-hint">Add trivia questions for the game!</p>
+          <div class="submit-question-form">
+            <input type="text" class="new-question-input" placeholder="Type your trivia question..." autocomplete="off">
+            <button class="submit-question-btn">Add Question</button>
+          </div>
+        </div>
+
+        <!-- Judge Controls: Question Selection -->
+        <div id="judgeControls" class="judge-controls hidden">
+          <h3>🎯 Pick a Question to Ask</h3>
+          <div class="question-filters">
+            <button class="filter-btn active" data-filter="available">Available (<span id="availableCount">0</span>)</button>
+            <button class="filter-btn" data-filter="used">Used (<span id="usedCount">0</span>)</button>
+            <button class="filter-btn" data-filter="all">All (<span id="allCount">0</span>)</button>
+          </div>
+          <div id="questionList" class="question-list"></div>
+          <div class="judge-actions">
+            <button id="resetScoresBtn" class="reset-btn">🔄 Reset Scores Only</button>
+            <button id="fullResetBtn" class="reset-btn secondary">🗑️ Full Reset (Scores + Questions)</button>
+          </div>
+        </div>
+
+        <div id="waitingMsg" class="waiting-msg hidden">
+          <div class="spinner"></div>
+          <p>Waiting for the judge to pick a question...</p>
+        </div>
+      </div>
+      
+      <div class="scoreboard-mini">
+        <h3>🏆 Scoreboard</h3>
+        <p class="games-played">Questions answered: <span id="questionsAnswered">0</span></p>
+        <div id="scoresMini"></div>
+      </div>
+    </section>
+
+    <!-- Question / Answer Screen -->
+    <section id="questionScreen" class="screen">
+      <div class="card question-card">
+        <div class="question-header">
+          <span class="question-number" id="questionNumber">Question</span>
+          <span class="question-by" id="questionBy"></span>
+        </div>
+        <h2 id="questionText" class="question-text"></h2>
+        <div id="answerSection" class="answer-section">
+          <input type="text" id="answerInput" placeholder="Type your answer..." autocomplete="off">
+          <button id="submitAnswer" class="submit-btn">Submit Answer ✓</button>
+        </div>
+        <div id="judgeQuestionView" class="judge-view hidden">
+          <p>Players are answering...</p>
+          <div id="answeredList" class="answered-list"></div>
+          <button id="forceJudgeBtn" class="force-btn">Skip waiting & Judge Now</button>
+        </div>
+        <div id="waitingForOthers" class="waiting-answer hidden">
+          <div class="check-mark">✓</div>
+          <p>Answer submitted! Waiting for others...</p>
+          <div id="waitingList"></div>
+          
+          <!-- Question submission while waiting -->
+          <div class="question-submit-section compact">
+            <h4>📝 Add a Question While You Wait</h4>
+            <div class="submit-question-form">
+              <input type="text" class="new-question-input" placeholder="Type your trivia question..." autocomplete="off">
+              <button class="submit-question-btn">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Judging Screen -->
+    <section id="judgingScreen" class="screen">
+      <div class="card judging-card">
+        <h2>🧑‍⚖️ Time to Judge!</h2>
+        <p class="question-reminder">Q: <span id="questionReminder"></span></p>
+        <div id="answerGroups" class="answer-groups"></div>
+        <div id="judgeButtons" class="judge-buttons hidden">
+          <button id="confirmJudgment" class="confirm-btn">✓ Confirm Judgments</button>
+        </div>
+        <div id="playerJudgingView" class="player-judging hidden">
+          <div class="spinner"></div>
+          <p>The judge is reviewing answers...</p>
+          
+          <!-- Question submission while waiting -->
+          <div class="question-submit-section compact">
+            <h4>📝 Add a Question While You Wait</h4>
+            <div class="submit-question-form">
+              <input type="text" class="new-question-input" placeholder="Type your trivia question..." autocomplete="off">
+              <button class="submit-question-btn">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="resultsScreen" class="screen">
+      <div class="card results-card">
+        <h2>📊 Results!</h2>
+        <div id="roundResults" class="round-results"></div>
+        <div class="scoreboard-full">
+          <h3>🏆 Current Standings</h3>
+          <div id="scoresFull"></div>
+        </div>
+        <div id="judgeResultControls" class="hidden">
+          <button id="nextQuestionBtn" class="next-btn">← Pick Next Question</button>
+        </div>
+        <div id="playerResultWait" class="hidden">
+          <p class="waiting-text">Waiting for judge to pick the next question...</p>
+          
+          <!-- Question submission while waiting -->
+          <div class="question-submit-section compact">
+            <h4>📝 Add a Question While You Wait</h4>
+            <div class="submit-question-form">
+              <input type="text" class="new-question-input" placeholder="Type your trivia question..." autocomplete="off">
+              <button class="submit-question-btn">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

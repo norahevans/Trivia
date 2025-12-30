@@ -1,0 +1,201 @@
+{
+  "scores": {
+    "Norah": 0,
+    "Erin": 0,
+    "Opa": 0,
+    "Oma": 0,
+    "Jeff": 0,
+    "Liz": 0,
+    "Amanda": 0,
+    "Bill": 0,
+    "Ren": 0,
+    "Lilah": 0,
+    "AJ": 0,
+    "Silas": 0,
+    "Georgia": 0
+  },
+  "questions": [
+    {
+      "id": 0,
+      "text": "What is the capital of France?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 1,
+      "text": "How many continents are there on Earth?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 2,
+      "text": "What is the largest planet in our solar system?",
+      "used": true,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 3,
+      "text": "Who painted the Mona Lisa?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 4,
+      "text": "What year did the Titanic sink?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 5,
+      "text": "What is the chemical symbol for gold?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 6,
+      "text": "How many strings does a standard guitar have?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 7,
+      "text": "What is the largest ocean on Earth?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 8,
+      "text": "Who wrote Romeo and Juliet?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 9,
+      "text": "What is the fastest land animal?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 10,
+      "text": "How many bones are in the adult human body?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 11,
+      "text": "What is the capital of Japan?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 12,
+      "text": "What gas do plants absorb from the atmosphere?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 13,
+      "text": "Who was the first person to walk on the moon?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 14,
+      "text": "What is the tallest mountain in the world?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 15,
+      "text": "How many colors are in a rainbow?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 16,
+      "text": "What is the largest mammal in the world?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 17,
+      "text": "In what year did World War II end?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 18,
+      "text": "What is the smallest country in the world?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 19,
+      "text": "Who invented the telephone?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 20,
+      "text": "What is the hardest natural substance on Earth?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 21,
+      "text": "How many players are on a basketball team on the court?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 22,
+      "text": "What is the capital of Australia?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 23,
+      "text": "Who wrote Harry Potter?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 24,
+      "text": "What is the longest river in the world?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 25,
+      "text": "How many teeth does an adult human typically have?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 26,
+      "text": "What planet is known as the Red Planet?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 27,
+      "text": "Who is known as the 'Father of Computers'?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 28,
+      "text": "What is the main ingredient in guacamole?",
+      "used": false,
+      "submittedBy": "Default"
+    },
+    {
+      "id": 29,
+      "text": "How many sides does a hexagon have?",
+      "used": false,
+      "submittedBy": "Default"
+    }
+  ],
+  "nextQuestionId": 30,
+  "questionsAnswered": 0
+}
