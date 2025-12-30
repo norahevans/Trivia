@@ -21,8 +21,19 @@ const playerButtonsContainer = document.getElementById('playerButtons');
 const judgeBtn = document.getElementById('judgeBtn');
 
 judgeBtn.addEventListener('click', () => {
-  socket.emit('becomeJudge');
-  isJudge = true;
+  const password = prompt('Enter the judge password:');
+  if (password) {
+    socket.emit('becomeJudge', password);
+  }
+});
+
+// Handle judge authentication result
+socket.on('judgeAuthResult', (result) => {
+  if (result.success) {
+    isJudge = true;
+  } else {
+    alert(result.message || 'Wrong password!');
+  }
 });
 
 // Lobby elements
